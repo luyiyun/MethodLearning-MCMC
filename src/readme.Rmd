@@ -1,0 +1,19 @@
+---
+title: "readme"
+author: "Lu Yiyun"
+date: "2020/1/2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, results = "markup", error = TRUE, collapse = TRUE)
+```
+
+# MCMC
+
+本次读书会的主要内容有：
+
+1. 蒙特卡洛（Monte Carlo）方法
+2. 马尔科夫链（Markov Chain）
+3. 平稳随机过程
+4. 马尔科夫链蒙特卡洛(MCMC)
