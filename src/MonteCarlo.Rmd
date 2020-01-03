@@ -1,12 +1,11 @@
 ---
-title: "MonteCarlo"
+title: "Monte Carlo"
 author: "Lu Yiyun"
 date: "2020/1/2"
 output:
-  github_document:
+  html_document:
     toc: true
     toc_depth: 2
-    html_preview: false
 ---
 
 ```{r setup, include=FALSE}
