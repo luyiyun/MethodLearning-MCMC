@@ -24,15 +24,25 @@ Lu Yiyun
 
 以下是依概率收敛的定义： ![](./images/probconv.png)
 
-**假设上述随机变量\\(X\\)是一个常数且就是我们需要求的那个确定性数值时，我们是否能够通过随机变量序列\\(X_n\\)来估算它呢？**
+**假设上述随机变量![X](https://latex.codecogs.com/png.latex?X
+"X")是一个常数且就是我们需要求的那个确定性数值时，我们是否能够通过随机变量序列![X\_n](https://latex.codecogs.com/png.latex?X_n
+"X_n")来估算它呢？**
 
-只要我们能够得到一个\\(n\\)足够大的随机变量\\(X_n\\)的一个样本，其与我们要求的常数\\(X\\)间距离差距比\\(\epsilon\\)大的概率是非常小的。这是我理解的蒙特卡洛方法的数学原理来源。
+只要我们能够得到一个![n](https://latex.codecogs.com/png.latex?n
+"n")足够大的随机变量![X\_n](https://latex.codecogs.com/png.latex?X_n
+"X_n")的一个样本，其与我们要求的常数![X](https://latex.codecogs.com/png.latex?X
+"X")间距离差距比![\\epsilon](https://latex.codecogs.com/png.latex?%5Cepsilon
+"\\epsilon")大的概率是非常小的。这是我理解的蒙特卡洛方法的数学原理来源。
 
 所以，如果我们需要使用蒙特卡洛方法，就需要以下3个部分：
 
   - 一个随机分布序列，其中我们可以对其足够后面的元素进行采样；
-  - 一个依概率收敛的关系，这个随机分布序列会依概率收敛至一个常数\\(X\\)；
-  - 常数\\(X\\)和我们要求的值\\(X'\\)有确定性的函数关系，而且我们知道如何利用\\(X\\)计算\\(X'\\)。
+  - 一个依概率收敛的关系，这个随机分布序列会依概率收敛至一个常数![X](https://latex.codecogs.com/png.latex?X
+    "X")；
+  - 常数![X](https://latex.codecogs.com/png.latex?X
+    "X")和我们要求的值![X'](https://latex.codecogs.com/png.latex?X%27
+    "X'")有确定性的函数关系，而且我们知道如何利用![X](https://latex.codecogs.com/png.latex?X
+    "X")计算![X'](https://latex.codecogs.com/png.latex?X%27 "X'")。
 
 上面的3个条件，第一个和第二个是非常难以满足的。
 
@@ -42,14 +52,23 @@ Lu Yiyun
 
 所以前面的3个条件可以更换为：
 
-  - 一个可以进行采样的随机变量\\(X\\)，其期望为\\(\mu\\)；
-  - 随机变量的期望\\(\mu\\)和我们要求的值\\(X'\\)有确定性的函数关系，我们可以利用\\(\mu\\)计算出\\(X'\\)。
+  - 一个可以进行采样的随机变量![X](https://latex.codecogs.com/png.latex?X
+    "X")，其期望为![\\mu](https://latex.codecogs.com/png.latex?%5Cmu
+    "\\mu")；
+  - 随机变量的期望![\\mu](https://latex.codecogs.com/png.latex?%5Cmu
+    "\\mu")和我们要求的值![X'](https://latex.codecogs.com/png.latex?X%27
+    "X'")有确定性的函数关系，我们可以利用![\\mu](https://latex.codecogs.com/png.latex?%5Cmu
+    "\\mu")计算出![X'](https://latex.codecogs.com/png.latex?X%27 "X'")。
 
-这样就可以使用以下的步骤来进行估算\\(X'\\)：
+这样就可以使用以下的步骤来进行估算![X'](https://latex.codecogs.com/png.latex?X%27 "X'")：
 
-1.  构建一个随机采样器，对随机变量\\(X\\)进行采样；
-2.  计算样本均值\\(\overline{X}\\)，作为\\(\mu\\)的估计；
-3.  使用\\(\overline{X}\\)计算\\(X'\\)。
+1.  构建一个随机采样器，对随机变量![X](https://latex.codecogs.com/png.latex?X "X")进行采样；
+2.  计算样本均值![\\overline{X}](https://latex.codecogs.com/png.latex?%5Coverline%7BX%7D
+    "\\overline{X}")，作为![\\mu](https://latex.codecogs.com/png.latex?%5Cmu
+    "\\mu")的估计；
+3.  使用![\\overline{X}](https://latex.codecogs.com/png.latex?%5Coverline%7BX%7D
+    "\\overline{X}")计算![X'](https://latex.codecogs.com/png.latex?X%27
+    "X'")。
 
 以上就是我们常说的蒙特卡洛方法的基本过程。
 
@@ -57,7 +76,8 @@ Lu Yiyun
 
 # 2.1 例1-积分计算
 
-问题：计算\\(\int_0^1{\sin(x)dx}\\)的值？
+问题：计算![\\int\_0^1{\\sin(x)dx}](https://latex.codecogs.com/png.latex?%5Cint_0%5E1%7B%5Csin%28x%29dx%7D
+"\\int_0^1{\\sin(x)dx}")的值？
 
 我们通过确定性的积分运算可以知道这个值大约是0.4596977。
 
@@ -173,8 +193,12 @@ df %>% gather() %>% ggplot() + geom_boxplot(aes(key, value)) +
 
 ![](./images/Buffon_needle.gif)
 
-有一个以等距平行线(距离为\\(t\\))组成的地板，现在随机抛一支长度(\\(l\\))比木纹之间距离小的针，求针与其中一条木纹相交的概率。这个概率可以表示为
-\[P=\frac{2l}{t\pi}\] 则我们可以通过重复抛针实验来得到圆周率的估计值。
+有一个以等距平行线(距离为![t](https://latex.codecogs.com/png.latex?t
+"t"))组成的地板，现在随机抛一支长度(![l](https://latex.codecogs.com/png.latex?l
+"l"))比木纹之间距离小的针，求针与其中一条木纹相交的概率。这个概率可以表示为   
+![P=\\frac{2l}{t\\pi}](https://latex.codecogs.com/png.latex?P%3D%5Cfrac%7B2l%7D%7Bt%5Cpi%7D
+"P=\\frac{2l}{t\\pi}")  
+则我们可以通过重复抛针实验来得到圆周率的估计值。
 
 证明： ![](./images/boffon_needle_proof.png)
 
@@ -281,11 +305,15 @@ plot_grid(plotlist = plots, nrow = 2, labels = names(plots))  # cowplot的警告
 
 如果也使用逆概率采样法，则我们需要能够计算正态分布的分布函数的反函数：
 
-以下是正态分布的概率密度函数： \[\phi(x)=\frac{1}{\sqrt{2\pi}}e^{\frac{1}{2}x^2}\]
-其累计分布函数：
-\[\Phi(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^x{e^{-t^2/2}dt}\]
+以下是正态分布的概率密度函数：   
+![\\phi(x)=\\frac{1}{\\sqrt{2\\pi}}e^{\\frac{1}{2}x^2}](https://latex.codecogs.com/png.latex?%5Cphi%28x%29%3D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7De%5E%7B%5Cfrac%7B1%7D%7B2%7Dx%5E2%7D
+"\\phi(x)=\\frac{1}{\\sqrt{2\\pi}}e^{\\frac{1}{2}x^2}")  
+其累计分布函数：   
+![\\Phi(x)=\\frac{1}{\\sqrt{2\\pi}}\\int\_{-\\infty}^x{e^{-t^2/2}dt}](https://latex.codecogs.com/png.latex?%5CPhi%28x%29%3D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cint_%7B-%5Cinfty%7D%5Ex%7Be%5E%7B-t%5E2%2F2%7Ddt%7D
+"\\Phi(x)=\\frac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^x{e^{-t^2/2}dt}")  
 实际上有一类方法是利用error
-function进行的，其和累计分布函数有关系\\(\Phi(x)=\frac{1}{2}[1+erf(\frac{x}{\sqrt{2}})]\\)，但是显然进行这样的函数计算是另外的一个难题，我们是否有其他的方法来进行采样呢？
+function进行的，其和累计分布函数有关系![\\Phi(x)=\\frac{1}{2}\[1+erf(\\frac{x}{\\sqrt{2}})\]](https://latex.codecogs.com/png.latex?%5CPhi%28x%29%3D%5Cfrac%7B1%7D%7B2%7D%5B1%2Berf%28%5Cfrac%7Bx%7D%7B%5Csqrt%7B2%7D%7D%29%5D
+"\\Phi(x)=\\frac{1}{2}[1+erf(\\frac{x}{\\sqrt{2}})]")，但是显然进行这样的函数计算是另外的一个难题，我们是否有其他的方法来进行采样呢？
 
 **大家是否还记得我们如何计算正态分布的概率密度函数的积分是1？？**
 
@@ -295,9 +323,20 @@ function进行的，其和累计分布函数有关系\\(\Phi(x)=\frac{1}{2}[1+er
 
 其主要过程为：
 
-1.  从\\([-1, 1]\\)中采两个均匀分布的随机变量\\(z_1, z_2\\)，将没有位于单位园内的点去掉，\\(p(Z)=\frac{1}{\pi}I(is in circle)\\)；
-2.  计算数值\[x_i=z_i(\frac{-2\ln{r^2}}{r^2})\]，其中\\(r^2=z_1^2+z_2^2\\)，利用多维随机变量的变换公式（是《概率论与数理统计》第52页定理的推广，是微积分中多重积分换元法的应用）：
-    \[p(x_1,x_2)=p(z_1,z_2)|\frac{\partial(z_1,z_2)}{\partial(x_1,x_2)}|=[\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}x_1^2)][\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}x_2^2)]\]
+1.  从![\[-1, 1\]](https://latex.codecogs.com/png.latex?%5B-1%2C%201%5D
+    "[-1, 1]")中采两个均匀分布的随机变量![z\_1,
+    z\_2](https://latex.codecogs.com/png.latex?z_1%2C%20z_2
+    "z_1, z_2")，将没有位于单位园内的点去掉，![p(Z)=\\frac{1}{\\pi}I(is in
+    circle)](https://latex.codecogs.com/png.latex?p%28Z%29%3D%5Cfrac%7B1%7D%7B%5Cpi%7DI%28is%20in%20circle%29
+    "p(Z)=\\frac{1}{\\pi}I(is in circle)")；
+2.  计算数值  
+    ![x\_i=z\_i(\\frac{-2\\ln{r^2}}{r^2})](https://latex.codecogs.com/png.latex?x_i%3Dz_i%28%5Cfrac%7B-2%5Cln%7Br%5E2%7D%7D%7Br%5E2%7D%29
+    "x_i=z_i(\\frac{-2\\ln{r^2}}{r^2})")  
+    ，其中![r^2=z\_1^2+z\_2^2](https://latex.codecogs.com/png.latex?r%5E2%3Dz_1%5E2%2Bz_2%5E2
+    "r^2=z_1^2+z_2^2")，利用多维随机变量的变换公式（是《概率论与数理统计》第52页定理的推广，是微积分中多重积分换元法的应用）：
+      
+    ![p(x\_1,x\_2)=p(z\_1,z\_2)|\\frac{\\partial(z\_1,z\_2)}{\\partial(x\_1,x\_2)}|=\[\\frac{1}{\\sqrt{2\\pi}}\\exp(-\\frac{1}{2}x\_1^2)\]\[\\frac{1}{\\sqrt{2\\pi}}\\exp(-\\frac{1}{2}x\_2^2)\]](https://latex.codecogs.com/png.latex?p%28x_1%2Cx_2%29%3Dp%28z_1%2Cz_2%29%7C%5Cfrac%7B%5Cpartial%28z_1%2Cz_2%29%7D%7B%5Cpartial%28x_1%2Cx_2%29%7D%7C%3D%5B%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cexp%28-%5Cfrac%7B1%7D%7B2%7Dx_1%5E2%29%5D%5B%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cexp%28-%5Cfrac%7B1%7D%7B2%7Dx_2%5E2%29%5D
+    "p(x_1,x_2)=p(z_1,z_2)|\\frac{\\partial(z_1,z_2)}{\\partial(x_1,x_2)}|=[\\frac{1}{\\sqrt{2\\pi}}\\exp(-\\frac{1}{2}x_1^2)][\\frac{1}{\\sqrt{2\\pi}}\\exp(-\\frac{1}{2}x_2^2)]")  
 
 从这里可以看出，这时随机变量符合的是一个2维的独立正态分布，我们取出其中的一个来，就是我们想要的标准正态分布，而对于不是标准的正态分布，则再使用Z变换即可完成。
 
@@ -350,7 +389,8 @@ plot_grid(plotlist = plots, nrow = 2, labels = names(plots))
 
 ![](/images/MonteCarlo/unnamed-chunk-10-1.png)<!-- -->
 
-但上述过程会存在一个问题，我们有一个拒绝采样的过程来完成单位圆均匀分布的采样，这个处理不太优雅，而且这里也不能再使用球面坐标变换进行变换（会差一个\\(r\\)），所以我去找了一个另外方式的Box-Muller采样。
+但上述过程会存在一个问题，我们有一个拒绝采样的过程来完成单位圆均匀分布的采样，这个处理不太优雅，而且这里也不能再使用球面坐标变换进行变换（会差一个![r](https://latex.codecogs.com/png.latex?r
+"r")），所以我去找了一个另外方式的Box-Muller采样。
 
 ![](./images/boxmuller2.png)
 
@@ -397,18 +437,39 @@ Box-Muller方法其实代表了一类方法，其利用变量代换的技巧来�
 
 其采样过程是：
 
-1.  找到一个可以进行采样的proposed分布\\(q(x)\\)，并保证存在一个正数\\(M\\)，使得\\(Mq(x)\\)会整个覆盖目标分布\\(p(x)\\)；
-2.  先对\\(q(x)\\)进行一次采样；
-3.  然后计算接受概率\\(p_{accept}=\frac{p(x)}{Mq(x)}\\)；
-4.  再从\\(U(0,1)\\)中进行采样\\(u\\)，如果\\(u<p_{accept}\\)则保留这个样本，否则丢弃这个样本；
-5.  所有接受的样本构成\\(p(x)\\)的一个采样。
+1.  找到一个可以进行采样的proposed分布![q(x)](https://latex.codecogs.com/png.latex?q%28x%29
+    "q(x)")，并保证存在一个正数![M](https://latex.codecogs.com/png.latex?M
+    "M")，使得![Mq(x)](https://latex.codecogs.com/png.latex?Mq%28x%29
+    "Mq(x)")会整个覆盖目标分布![p(x)](https://latex.codecogs.com/png.latex?p%28x%29
+    "p(x)")；
+2.  先对![q(x)](https://latex.codecogs.com/png.latex?q%28x%29
+    "q(x)")进行一次采样；
+3.  然后计算接受概率![p\_{accept}=\\frac{p(x)}{Mq(x)}](https://latex.codecogs.com/png.latex?p_%7Baccept%7D%3D%5Cfrac%7Bp%28x%29%7D%7BMq%28x%29%7D
+    "p_{accept}=\\frac{p(x)}{Mq(x)}")；
+4.  再从![U(0,1)](https://latex.codecogs.com/png.latex?U%280%2C1%29
+    "U(0,1)")中进行采样![u](https://latex.codecogs.com/png.latex?u
+    "u")，如果![u\<p\_{accept}](https://latex.codecogs.com/png.latex?u%3Cp_%7Baccept%7D
+    "u\<p_{accept}")则保留这个样本，否则丢弃这个样本；
+5.  所有接受的样本构成![p(x)](https://latex.codecogs.com/png.latex?p%28x%29
+    "p(x)")的一个采样。
 
 关于其理论证明： ![](./images/rejection_proof.png)
 这里的例子是去进行Gamma分布的采样，Gamma分布的概率密度函数是：
-\[Ga(x|\alpha,\lambda)=\frac{1}{\Gamma(\alpha)}x^{\alpha-1}\lambda^{\alpha}\exp(-\lambda x)\]
-我们知道，如果有k个独立的参数为\\(\lambda\\)指数分布随机变量\\(X_i\\)，则\\(Y=X_1+\cdots+X_k\\)服从\\(Ga(k,\lambda)\\)的Gamma分布，我们可以依靠这个trick来得到Gamma分布样本。但如果\\(\alpha\\)参数不是正数，则以上方法失效。这时我们可以使用拒绝采样，proposed分布就是使用\\(\alpha\\)为整数的Gamma分布，取\\(\lfloor\alpha\rfloor\\)。
+  
+![Ga(x|\\alpha,\\lambda)=\\frac{1}{\\Gamma(\\alpha)}x^{\\alpha-1}\\lambda^{\\alpha}\\exp(-\\lambda
+x)](https://latex.codecogs.com/png.latex?Ga%28x%7C%5Calpha%2C%5Clambda%29%3D%5Cfrac%7B1%7D%7B%5CGamma%28%5Calpha%29%7Dx%5E%7B%5Calpha-1%7D%5Clambda%5E%7B%5Calpha%7D%5Cexp%28-%5Clambda%20x%29
+"Ga(x|\\alpha,\\lambda)=\\frac{1}{\\Gamma(\\alpha)}x^{\\alpha-1}\\lambda^{\\alpha}\\exp(-\\lambda x)")  
+我们知道，如果有k个独立的参数为![\\lambda](https://latex.codecogs.com/png.latex?%5Clambda
+"\\lambda")指数分布随机变量![X\_i](https://latex.codecogs.com/png.latex?X_i
+"X_i")，则![Y=X\_1+\\cdots+X\_k](https://latex.codecogs.com/png.latex?Y%3DX_1%2B%5Ccdots%2BX_k
+"Y=X_1+\\cdots+X_k")服从![Ga(k,\\lambda)](https://latex.codecogs.com/png.latex?Ga%28k%2C%5Clambda%29
+"Ga(k,\\lambda)")的Gamma分布，我们可以依靠这个trick来得到Gamma分布样本。但如果![\\alpha](https://latex.codecogs.com/png.latex?%5Calpha
+"\\alpha")参数不是正数，则以上方法失效。这时我们可以使用拒绝采样，proposed分布就是使用![\\alpha](https://latex.codecogs.com/png.latex?%5Calpha
+"\\alpha")为整数的Gamma分布，取![\\lfloor\\alpha\\rfloor](https://latex.codecogs.com/png.latex?%5Clfloor%5Calpha%5Crfloor
+"\\lfloor\\alpha\\rfloor")。
 
-下面计算\\(M\\)： ![](./images/gamma_M.png)
+下面计算![M](https://latex.codecogs.com/png.latex?M "M")：
+![](./images/gamma_M.png)
 
 ![](./images/gamma_reject.png)
 
@@ -476,20 +537,28 @@ rejection_gamma(10, 1.5, 2)  # 有局限性，lambda无法取1
 
 ## 4.4 重要性采样
 
-现在考虑一个特殊的问题（估计一个随机变量的期望）: \[I=E[f]=\int{f(x)p(x)dx}\]
+现在考虑一个特殊的问题（估计一个随机变量的期望）:   
+![I=E\[f\]=\\int{f(x)p(x)dx}](https://latex.codecogs.com/png.latex?I%3DE%5Bf%5D%3D%5Cint%7Bf%28x%29p%28x%29dx%7D
+"I=E[f]=\\int{f(x)p(x)dx}")  
 
-我们随便找一个proposed distribution\\(q(x)\\)，则我们有以下变换：
-\[E[f]=\int{f(x)\frac{p(x)}{q(x)}q(x)dx}\approx\frac{1}{S}\sum_{s=1}^{S}{w_sf(x^s)}=\hat{I}\]
+我们随便找一个proposed
+distribution![q(x)](https://latex.codecogs.com/png.latex?q%28x%29
+"q(x)")，则我们有以下变换：   
+![E\[f\]=\\int{f(x)\\frac{p(x)}{q(x)}q(x)dx}\\approx\\frac{1}{S}\\sum\_{s=1}^{S}{w\_sf(x^s)}=\\hat{I}](https://latex.codecogs.com/png.latex?E%5Bf%5D%3D%5Cint%7Bf%28x%29%5Cfrac%7Bp%28x%29%7D%7Bq%28x%29%7Dq%28x%29dx%7D%5Capprox%5Cfrac%7B1%7D%7BS%7D%5Csum_%7Bs%3D1%7D%5E%7BS%7D%7Bw_sf%28x%5Es%29%7D%3D%5Chat%7BI%7D
+"E[f]=\\int{f(x)\\frac{p(x)}{q(x)}q(x)dx}\\approx\\frac{1}{S}\\sum_{s=1}^{S}{w_sf(x^s)}=\\hat{I}")  
 
-这里的\\(w_s=\frac{p(x^s)}{q(x^s)}\\)称为**重要性权重**。
+这里的![w\_s=\\frac{p(x^s)}{q(x^s)}](https://latex.codecogs.com/png.latex?w_s%3D%5Cfrac%7Bp%28x%5Es%29%7D%7Bq%28x%5Es%29%7D
+"w_s=\\frac{p(x^s)}{q(x^s)}")称为**重要性权重**。
 
-根据上面的推导，任何的proposal都可以完成这个任务，但什么样的proposal更好呢？一个自然的指标是最小化\\(\hat{I}\\)的方差。
+根据上面的推导，任何的proposal都可以完成这个任务，但什么样的proposal更好呢？一个自然的指标是最小化![\\hat{I}](https://latex.codecogs.com/png.latex?%5Chat%7BI%7D
+"\\hat{I}")的方差。
 
 ![](./images/importance_sampling.png)
 
 注意到，什么时候令Jesen不等式等号成立：随机变量是一个常数，所以我们有23.23的结论。
 
-我们模拟一下使用均匀分布和正态分布作为proposal来计算t分布下\\(sin(x)\\)的均值：
+我们模拟一下使用均匀分布和正态分布作为proposal来计算t分布下![sin(x)](https://latex.codecogs.com/png.latex?sin%28x%29
+"sin(x)")的均值：
 
 ``` r
 importance_mean_gamma <- function(n, proposal="uniform", uniform_scale=c(0, 1)) {
@@ -544,6 +613,8 @@ importance_mean_gamma <- function(n, proposal="uniform", uniform_scale=c(0, 1)) 
 
 # 5\. 问题
 
-以上的采样多是在一维分布上进行的。如果我们使用拒绝采样对一个高维分布进行采样，则根据高维数据的特点，大约其接受率是\\(p_{accept}^D\\)，其中\\(D\\)是维数。假设我们有0.99的接受率，安装正常组学数据的维度大约有8000个维度，则我们计算其接受率是1.206581810^{-35}，这样的采样效率是不可能实现一个有效的采样方法的。所以一般在高维数据上单纯的拒绝采样不可行。
+以上的采样多是在一维分布上进行的。如果我们使用拒绝采样对一个高维分布进行采样，则根据高维数据的特点，大约其接受率是![p\_{accept}^D](https://latex.codecogs.com/png.latex?p_%7Baccept%7D%5ED
+"p_{accept}^D")，其中![D](https://latex.codecogs.com/png.latex?D
+"D")是维数。假设我们有0.99的接受率，安装正常组学数据的维度大约有8000个维度，则我们计算其接受率是1.206581810^{-35}，这样的采样效率是不可能实现一个有效的采样方法的。所以一般在高维数据上单纯的拒绝采样不可行。
 
 高维分布上的采样需要马尔科夫链的助力。
