@@ -2,7 +2,7 @@
 title: "读书会活动-MCMC"
 author: "Lu Yiyun"
 date: "2020/1/2"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
