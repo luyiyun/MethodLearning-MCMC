@@ -6,7 +6,8 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, results = "markup", error = TRUE, collapse = TRUE)
+knitr::opts_knit$set(base.dir = "E:/R/Learning/MCMC/", base.url = "/")
+knitr::opts_chunk$set(echo = TRUE, results = "markup", error = TRUE, collapse = TRUE, fig.path = "images/readme/")
 ```
 
 本次读书会的主要内容有：
