@@ -2,12 +2,17 @@
 title: "Monte Carlo"
 author: "Lu Yiyun"
 date: "2020/1/2"
-output: github_document
+output:
+  github_document:
+    toc: true
+    toc_depth: 2
+    html_preview: false
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_knit$set(base.dir = "E:/R/Learning/MCMC/", base.url = "/")
 knitr::opts_chunk$set(echo = TRUE, results = "markup", error = TRUE, collapse = TRUE, fig.path = "images/MonteCarlo/")
+
 set.seed(2020)
 ```
 
