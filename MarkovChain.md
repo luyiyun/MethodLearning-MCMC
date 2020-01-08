@@ -43,16 +43,16 @@ P\{X_{m+n}=a_j|X_{t_1}=a_{i_1},X_{t_2}=a_{i_2},\cdots,X_{t_r}=a_{i_r},X_m=a_i\}=
 
 \(P_{ij}(n)\)称为**n步转移概率**，其中**1步转移概率**最重要，如果状态有限，则我们可以将所有的1步转移概率构成一个矩阵的形式：
 
-![](../images/transition_matrix.png)
+![](./images/transition_matrix.png)
 
 ## 例2
 
-![](../images/markov_exam2.png)
+![](./images/markov_exam2.png)
 
 ## 例3
 
-![](../images/markov_exam3-1.png) ![](../images/markov_exam3-2.png)
-![](../images/markov_exam3-3.png)
+![](./images/markov_exam3-1.png) ![](./images/markov_exam3-2.png)
+![](./images/markov_exam3-3.png)
 
 我对这个模拟感兴趣，就计算机模拟了一下：
 
@@ -103,11 +103,11 @@ as_tibble(rw_res) %>% mutate(step=1:nrow(rw_res)) %>%
 
 ## 齐次马氏链的有限维分布
 
-![](../images/markov_dist.png) ![](../images/markov_dist2.png)
+![](./images/markov_dist.png) ![](./images/markov_dist2.png)
 
 # 3\. 多步转移概率
 
-![](../images/ck_equation.png)
+![](./images/ck_equation.png)
 
 矩阵形式： \[P(u+v)=P(u)P(v)\]
 
@@ -115,19 +115,19 @@ as_tibble(rw_res) %>% mutate(step=1:nrow(rw_res)) %>%
 
 **对于齐次马氏链，n步转移概率矩阵是一步转移概率矩阵的n次方，进而齐次马氏链的有限维分布由初始分布和一步转移概率完全确定。**
 
-![](../images/2step_markov.png)
+![](./images/2step_markov.png)
 
 # 4\. 遍历性
 
-![](../images/2step_markov2.png)
+![](./images/2step_markov2.png)
 
 这说明有些马尔科夫链在经过长时间的转移后，其单时间点的分布会趋近于一个确定的分布，这种性质称为**遍历性**。
 
-遍历性的定义： ![](../images/bianli.png)
+遍历性的定义： ![](./images/bianli.png)
 
 那什么时候齐次马氏链有遍历性呢？有以下定理：
 
-![](../images/bianli_proof.png)
+![](./images/bianli_proof.png)
 
 注意，式(3.2)并不能保证齐次马氏链是遍历的，但可以用来求解极限分布。
 
@@ -137,9 +137,9 @@ as_tibble(rw_res) %>% mutate(step=1:nrow(rw_res)) %>%
 
 ## 例1
 
-![](../images/bianli_exam1.png)
+![](./images/bianli_exam1.png)
 
-![](../images/bianli_exam1-2.png)
+![](./images/bianli_exam1-2.png)
 
 # 5\. 细致平稳条件
 
